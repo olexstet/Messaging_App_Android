@@ -5,7 +5,7 @@ public class Message {
     private String name_user; // data of the user that sent this message
     private boolean currentUser; // is this message sent by us?
 
-    public Message(String body, String username, boolean belongsToCurrentUser) {
+    public Message(String body, String username, boolean currentUser) {
         this.body_message = body;
         this.name_user = username;
         this.currentUser = currentUser;

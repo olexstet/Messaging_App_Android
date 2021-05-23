@@ -23,7 +23,7 @@
         app:srcCompat="@drawable/dialog_box1" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/imageView_thinking1"
         android:layout_width="162dp"
         android:layout_height="136dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,7 +35,7 @@
         app:srcCompat="@drawable/emoji_thinking1" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imageView_thinking2"
         android:layout_width="137dp"
         android:layout_height="135dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -91,7 +91,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
-        android:textSize="12pt"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.045"

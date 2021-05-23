@@ -31,8 +31,6 @@ public class MainActivity_page2 extends AppCompatActivity {
     private SharedPreferences mSharedPreferences;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

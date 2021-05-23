@@ -212,6 +212,7 @@ public class MainActivity_page4 extends AppCompatActivity {
         else{
             bytesPayload = Payload.fromBytes((str).getBytes());
             Message message = new Message(str, username, true);
+            System.out.println(message.isCurrentUser());
             messageAdapter.add(message);
             messagesView.setSelection(messagesView.getCount() - 1);
             endPointId = endPointId_copy;
@@ -249,6 +250,7 @@ public class MainActivity_page4 extends AppCompatActivity {
                 //Insert Message data Into database
                 myDataBase.addMessage(contactedUsername,received_message, date,1);
                 Message message = new Message(received_message,contactedUsername, false);
+                System.out.println(message.isCurrentUser());
                 messageAdapter.add(message);
                 messagesView.setSelection(messagesView.getCount() - 1);
                 System.out.println(received_message);
