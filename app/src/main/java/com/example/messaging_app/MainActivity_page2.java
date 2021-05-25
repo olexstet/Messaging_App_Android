@@ -24,25 +24,29 @@ import org.w3c.dom.Text;
 
 public class MainActivity_page2 extends AppCompatActivity {
 
+    // Button's names
     private Button button_contacts;
     private Button button_find_contacts;
-    private TextView username_string;
-    public static final String PREFERENCES_NAME = "dataStorage";
+
+    private TextView username_string; // Used for displaying username
+    public static final String PREFERENCES_NAME = "dataStorage"; // Name of sharedPreferences
     private SharedPreferences mSharedPreferences;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_page2);
+        setContentView(R.layout.activity_main_page2); // set layout
 
-        mSharedPreferences = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
-        username_string = (TextView) findViewById(R.id.username_text);
-        String username = mSharedPreferences.getString("username","0");
-        username_string.setText(username);
+        mSharedPreferences = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE); // Initialize sharedPreferences by finding the sharedPreference file with the PREFERENCES_NAME
+
+        // Display username
+        username_string = (TextView) findViewById(R.id.username_text); // fetch TextView
+        String username = mSharedPreferences.getString("username","0"); // Get username of the user
+        username_string.setText(username); // set in textView the username
 
 
-
+        // Pass to MainActivity_page3 (Hostory)
         button_contacts = (Button)findViewById(R.id.button_contacts);
         button_contacts.setOnClickListener(new View.OnClickListener(){
 
@@ -53,6 +57,7 @@ public class MainActivity_page2 extends AppCompatActivity {
             }
         });
 
+        // Pass to MainActivity_page4 (Chating with other users)
         button_find_contacts = (Button)findViewById(R.id.button_find_contacts);
         button_find_contacts.setOnClickListener(new View.OnClickListener(){
 
@@ -63,19 +68,20 @@ public class MainActivity_page2 extends AppCompatActivity {
             }
         });
 
+
     }
 
 
 
-
+    // Open new activity MainActivity_page3
     public void openActivity3(){
         Intent intent = new Intent(this, MainActivity_page3.class);
         startActivity(intent);
     }
 
+    // Open new activity MainActivity_page4
     public void openActivity4(){
         Intent intent = new Intent(this, MainActivity_page4.class);
-        intent.putExtra("startAdvert",false);
         startActivity(intent);
     }
 

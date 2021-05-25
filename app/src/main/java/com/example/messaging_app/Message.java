@@ -6,11 +6,12 @@ public class Message {
     private boolean currentUser; // is this message sent by us?
 
     public Message(String body, String username, boolean currentUser) {
-        this.body_message = body;
-        this.name_user = username;
-        this.currentUser = currentUser;
+        this.name_user = username; // pass sender name of the message
+        this.body_message = body; // pass body of the message
+        this.currentUser = currentUser; // is the message sent by us or by another user.
     }
 
+    // Return content of variables of the Message
     public String getBody() {
         return body_message;
     }

@@ -21,28 +21,29 @@ public class MainActivity_register extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_register);
-        myDB = new DatabaseHelper(this);
-        System.out.println("Created");
+        setContentView(R.layout.activity_main_register); // set layout
+        myDB = new DatabaseHelper(this); // Fetch sql database
 
-        mSharedPreferences = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE);
-        username_text = (EditText)findViewById(R.id.etUsername);
+        mSharedPreferences = getSharedPreferences(PREFERENCES_NAME, MODE_PRIVATE); // Get shared preferences based on the name
+        username_text = (EditText)findViewById(R.id.etUsername); // TextView where the user enter his username
+
+        // Button allow to save the username in shared preferences and then pass to Menu (MainActivity_page2)
         button_register = (Button)findViewById(R.id.button_register);
         button_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences.Editor editor = mSharedPreferences.edit();
-                editor.putString("username", username_text.getText().toString());
-                editor.commit();
-                openActivity2();
-                finish();
+                SharedPreferences.Editor editor = mSharedPreferences.edit(); // allow editing sharedPreferences
+                editor.putString("username", username_text.getText().toString()); // Set data to sharedPreferences with editor
+                editor.commit(); // save changes
+                openActivity2(); // Pass to MainActivity_page2
+                finish();  // finish this activity
             }
         });
     }
 
     public void openActivity2(){
-        Intent intent = new Intent(this, MainActivity_page2.class);
-        startActivity(intent);
+        Intent intent = new Intent(this, MainActivity_page2.class); // Create new intent for new activity
+        startActivity(intent); // start new activity
     }
 
 }
